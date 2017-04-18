@@ -607,7 +607,7 @@ final class DeviceDataManager: CarbStoreDelegate, DoseStoreDelegate, Transmitter
         }
         
         // Upload sensor glucose to Nightscout
-        remoteDataManager.nightscoutService.uploader?.uploadSGVFromxDripG5(glucose, device: "deviceStringNeedsToBeChanged")
+        remoteDataManager.nightscoutService.uploader?.uploadSGVFromxDripG5(glucose, device: device.name ?? "")
     }
 
     public func transmitter(_ transmitter: Transmitter, didReadUnknownData data: Data) {
